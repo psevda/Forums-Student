@@ -24,3 +24,48 @@ function showReply(){
     var replyArea = document.getElementById("reply-area");
     replyArea.classList.remove("hide");
 }
+
+
+document.getElementById('register-form').addEventListener('submit', function(event) {
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirm-password').value;
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        event.preventDefault();
+    }
+});
+
+
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    if (username === '' || password === '') {
+        alert('Please enter both username and password');
+        event.preventDefault();
+    } else {
+        window.location.href = "forums.html";
+        event.preventDefault();
+    }
+});
+
+
+
+document.getElementById('register-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var username = document.getElementById('username').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+
+    if (username === '' || email === '' || password === '') {
+        alert('Please fill all fields');
+    } else {
+
+
+        window.location.href = "forums.html";
+    }
+});
+
